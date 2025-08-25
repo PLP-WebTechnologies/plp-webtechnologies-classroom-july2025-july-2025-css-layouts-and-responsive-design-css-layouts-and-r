@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout 
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Learning layouts</div>
+            <div class="hamburger">☰</div>
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="container">
+        <div class="hero">
+            <h1>Modern Web Layouts</h1>
+            <p>Master the art of responsive web design with Flexbox and CSS Grid</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Main Content Area with Grid -->
+    <main class="container main-grid">
+        <!-- Content Section -->
+        <section>
+            <h2>Featured Content</h2>
+            <p>Welcome to our demonstration of modern CSS layout techniques. This page showcases how Flexbox and CSS Grid can work together to create beautiful, responsive web designs.</p>
+            
+            <!-- Card Container using Flexbox -->
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-img">Flexbox Layout</div>
+                    <div class="card-content">
+                        <h3>Flexbox Basics</h3>
+                        <p>Flexbox is a one-dimensional layout method for arranging items in rows or columns.</p>
+                        <a href="#">Read more</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">CSS Grid</div>
+                    <div class="card-content">
+                        <h3>Grid Fundamentals</h3>
+                        <p>CSS Grid is a two-dimensional layout system, perfect for overall page structure.</p>
+                        <a href="#">Read more</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img">Responsive Design</div>
+                    <div class="card-content">
+                        <h3>RWD Principles</h3>
+                        <p>Create websites that work beautifully on all device sizes with media queries.</p>
+                        <a href="#">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sidebar using Grid placement -->
+        <aside class="sidebar">
+            <div class="sidebar-widget">
+                <h3>About Layouts</h3>
+                <p>Modern CSS provides powerful tools for creating flexible, responsive web layouts without frameworks.</p>
+            </div>
+            
+            <div class="sidebar-widget">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Flexbox Guide</a></li>
+                    <li><a href="#">Grid Tutorial</a></li>
+                    <li><a href="#">Responsive Patterns</a></li>
+                    <li><a href="#">CSS Variables</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LayoutMaster</h3>
+                    <p>Creating beautiful, responsive web layouts with modern CSS techniques.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <p>Follow us on social media for the latest tips and tutorials on web design.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: charlzspice@gmail.com</p>
+                    <p>Phone: (254) 798 863 351</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Charles Thuku. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript to toggle mobile menu
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
