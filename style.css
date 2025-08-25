@@ -1,0 +1,104 @@
+/* Global Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header - Flexbox */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #004080;
+  color: white;
+  padding: 1rem;
+}
+.main-nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+.main-nav a {
+  color: white;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #f4f4f4;
+}
+
+/* Features Section - Grid */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+.card {
+  background: #e6f0ff;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Content Section - Grid */
+.content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+.content article, .content aside {
+  background: #fafafa;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  background: #004080;
+  color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1rem;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
