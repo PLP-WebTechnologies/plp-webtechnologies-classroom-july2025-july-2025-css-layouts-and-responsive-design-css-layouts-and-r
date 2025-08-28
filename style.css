@@ -1,0 +1,144 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Grid container */
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "main aside"
+        "footer footer";
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    width: 90%;
+    margin: 20px auto;
+}
+
+/* Header */
+header {
+    grid-area: header;
+    background-color: #564caf;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Navigation - Flexbox */
+nav {
+    grid-area: nav;
+}
+
+nav ul {
+    list-style: none;
+    background: blue;
+    padding: 10px;
+    display: flex; /* Flexbox */
+    justify-content: center;
+    gap: 20px;
+    border-radius: 5px;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: #555;
+    border-radius: 4px;
+}
+
+/* Main Content */
+main {
+    grid-area: main;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border: 2px solid #ccc;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Buttons */
+.btn {
+    background: #4CAF50;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #45a049;
+}
+
+/* Sidebar */
+aside {
+    grid-area: aside;
+    background: #eee;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 15px;
+    background: #333;
+    color: white;
+    border-radius: 6px;
+}
+
+
+
+/* Tablet view */
+@media (max-width: 900px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "aside"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card {
+        font-size: 0.9rem;
+    }
+}
