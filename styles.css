@@ -1,0 +1,204 @@
+/* CSS Variables for consistent theming */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --accent-color: #e74c3c;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --text-color: #333;
+    --spacing: 1rem;
+    --border-radius: 4px;
+    --box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f9f9f9;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: var(--spacing);
+    text-align: center;
+}
+
+/* Navigation - Using Flexbox */
+nav {
+    background-color: var(--primary-color);
+    padding: calc(var(--spacing) / 2);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0 calc(var(--spacing) / 2);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: calc(var(--spacing) / 2);
+    display: block;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius);
+}
+
+/* Main Content Area - Using CSS Grid */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing);
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing);
+    margin: var(--spacing) 0;
+}
+
+/* Sidebar and Main - Grid Areas */
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing);
+}
+
+main {
+    background-color: white;
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+aside {
+    background-color: var(--light-color);
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Cards Section - Using Flexbox */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing);
+    margin: var(--spacing) 0;
+}
+
+.card {
+    flex: 1 1 300px;
+    background-color: white;
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: calc(var(--spacing) / 2);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: var(--spacing);
+    margin-top: var(--spacing);
+}
+
+/* Media Queries for Responsive Design */
+/* Tablet View */
+@media (min-width: 768px) {
+    :root {
+        --spacing: 1.5rem;
+    }
+    
+    .content-wrapper {
+        grid-template-columns: 1fr 3fr;
+    }
+    
+    nav ul {
+        justify-content: flex-end;
+    }
+}
+
+/* Desktop View */
+@media (min-width: 1024px) {
+    :root {
+        --spacing: 2rem;
+    }
+    
+    .main-content {
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    .content-wrapper {
+        grid-template-columns: 1fr 4fr;
+    }
+    
+    .cards {
+        gap: calc(var(--spacing) * 1.5);
+    }
+    
+    .card {
+        flex: 1 1 250px;
+    }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav li {
+        margin: calc(var(--spacing) / 4) 0;
+    }
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: calc(var(--spacing) / 2) var(--spacing);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    margin-top: calc(var(--spacing) / 2);
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
