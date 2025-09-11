@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Week 4 
+        Responsive Layout</title>
+    <link rel="stylesheet" href="week4 style.css">
+</head>
+<body>
+
+    <div class="page-container">
+        <!-- Header Section -->
+        <header class="page-header">
+            <h1>My Responsive Website</h1>
+        </header>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content & Sidebar -->
+        <main class="main-content">
+            <section class="content-area">
+                <h2>Content Section (Grid)</h2>
+                <p>This section is part of the main grid layout. On a desktop, it sits next to the sidebar. On a tablet, it moves above the sidebar. On a mobile phone, it takes up the full width of the screen.</p>
+                
+                <div class="card-container">
+                    <div class="card">
+                        <h3>Flex Card 1</h3>
+                        <p>This card and its siblings are laid out using Flexbox for easy alignment.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Flex Card 2</h3>
+                        <p>Flexbox is ideal for arranging a series of items in a single row or column, like these cards.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Flex Card 3</h3>
+                        <p>As the screen shrinks, the cards will wrap to the next line to maintain a clean layout.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <h3>Sidebar (Grid)</h3>
+            <p>This sidebar is an integral part of the main grid. On desktop, it sits to the side. On mobile and tablet, it adapts to the new layout using media queries.</p>
+        </aside>
+
+        <!-- Footer Section -->
+        <footer class="page-footer">
+            <p>&copy; 2024 Responsive Layout. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
