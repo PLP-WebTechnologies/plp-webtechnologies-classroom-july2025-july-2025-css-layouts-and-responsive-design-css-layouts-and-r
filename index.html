@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Responsive Layout — Flexbox & Grid</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <h1>Responsive Layout Demo</h1>
+    <p class="tagline">Flexbox + Grid + Media Queries</p>
+  </header>
+
+  <!-- Navigation (Flexbox used) -->
+  <nav class="main-nav" aria-label="Main navigation">
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Grid Layout -->
+  <main class="site-grid">
+    <article class="content">
+      <h2>Welcome</h2>
+      <p>This page demonstrates use of CSS Grid for the overall layout and Flexbox inside components such as navigation and cards.</p>
+
+      <!-- Cards (Flexbox for 1-D row/column layout) -->
+      <div class="card-row">
+        <div class="card">
+          <h3>Card 1</h3>
+          <p>Flexible card using Flexbox rules (flex-basis, grow/shrink).</p>
+        </div>
+        <div class="card">
+          <h3>Card 2</h3>
+          <p>Cards wrap on narrow screens thanks to flex-wrap.</p>
+        </div>
+        <div class="card">
+          <h3>Card 3</h3>
+          <p>Each card remains readable on mobile and desktop.</p>
+        </div>
+      </div>
+
+      <section class="sample-text">
+        <h3>Responsive behavior</h3>
+        <p>Resize the browser or use devtools to view mobile/tablet/desktop layouts. The Grid changes columns with media queries and the nav switches from horizontal to vertical on small screens.</p>
+      </section>
+    </article>
+
+    <aside class="sidebar" aria-label="Sidebar">
+      <h3>Sidebar</h3>
+      <p>Place links, contact info, or related content here.</p>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Your Name — Responsive Layout Assignment</p>
+  </footer>
+</body>
+</html>
