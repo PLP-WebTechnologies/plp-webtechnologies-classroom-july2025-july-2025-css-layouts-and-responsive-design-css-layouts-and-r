@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Responsive Layout: Flexbox & Grid</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header with navigation (Flexbox) -->
+    <header class="site-header">
+      <div class="brand">PLP Layouts</div>
+      <nav class="site-nav" aria-label="Primary">
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          ☰
+        </button>
+        <ul id="nav-menu" class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero / Intro section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Modern CSS Layouts</h1>
+        <p>Using CSS Grid for overall structure and Flexbox for components.</p>
+        <a class="btn" href="#articles">Explore Articles</a>
+      </div>
+    </section>
+
+    <!-- Main layout (Grid: content + sidebar) -->
+    <main class="layout" id="features">
+      <section class="content">
+        <h2>Highlights</h2>
+        <p>
+          This page demonstrates a responsive grid-based layout that adapts from
+          a two-column design on desktop to a single-column flow on smaller
+          screens.
+        </p>
+
+        <!-- Card list (Flexbox) -->
+        <div class="card-list" id="articles">
+          <article class="card">
+            <h3>Grid Areas</h3>
+            <p>
+              Create clear, maintainable page structures using Grid template
+              areas.
+            </p>
+            <a href="#" class="text-link">Read more</a>
+          </article>
+          <article class="card">
+            <h3>Flexbox Alignment</h3>
+            <p>
+              Align and distribute items easily in navigation bars and card
+              lists.
+            </p>
+            <a href="#" class="text-link">Read more</a>
+          </article>
+          <article class="card">
+            <h3>Responsive Units</h3>
+            <p>
+              Use rem, %, and viewport units for scalable spacing and
+              typography.
+            </p>
+            <a href="#" class="text-link">Read more</a>
+          </article>
+        </div>
+      </section>
+
+      <aside class="sidebar" aria-label="Sidebar">
+        <h2>Sidebar</h2>
+        <ul class="sidebar-list">
+          <li>Breakpoint tips</li>
+          <li>Grid vs Flex: when to use</li>
+          <li>Accessibility reminders</li>
+          <li>Useful CSS resources</li>
+        </ul>
+      </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="contact">
+      <p>
+        © <span id="year"></span> PLP Responsive Demo • Built with CSS Grid &
+        Flexbox
+      </p>
+    </footer>
+
+    <script>
+      // Simple progressive enhancement: update year and handle mobile nav toggle
+      (function () {
+        var yearEl = document.getElementById("year");
+        if (yearEl) {
+          yearEl.textContent = new Date().getFullYear();
+        }
+
+        var toggle = document.querySelector(".nav-toggle");
+        var menu = document.getElementById("nav-menu");
+        if (toggle && menu) {
+          toggle.addEventListener("click", function () {
+            var expanded = this.getAttribute("aria-expanded") === "true";
+            this.setAttribute("aria-expanded", String(!expanded));
+            menu.classList.toggle("open");
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
