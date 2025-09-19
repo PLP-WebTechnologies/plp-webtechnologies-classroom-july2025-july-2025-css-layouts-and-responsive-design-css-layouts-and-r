@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive Health & Lifestyle Webpage with Flexbox, CSS Grid, Lists, Tables, Media, and Forms">
+  <title>Health & Lifestyle - Comprehensive Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1>🌿 Health & Lifestyle</h1>
+    <p>Responsive layout using Flexbox & Grid</p>
+  </header>
+
+  <!-- NAVIGATION (Flexbox) -->
+  <nav class="nav">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Nutrition</a></li>
+      <li><a href="#">Fitness</a></li>
+      <li><a href="#">Wellbeing</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT (Grid) -->
+  <main class="main-grid">
+    <!-- Content Section -->
+    <section class="content">
+      <h2>Healthy Living Tips</h2>
+      <ul>
+        <li>🥗 Eat more fruits and vegetables</li>
+        <li>🚶 Walk at least 30 minutes daily</li>
+        <li>💧 Drink 8 glasses of water</li>
+        <li>😴 Sleep 7–8 hours</li>
+        <li>🧘 Practice mindfulness</li>
+      </ul>
+
+      <!-- Cards using Flexbox -->
+      <div class="cards">
+        <article class="card">
+          <h3>Nutrition</h3>
+          <p>Eat more whole foods and maintain a balanced diet.</p>
+        </article>
+        <article class="card">
+          <h3>Exercise</h3>
+          <p>Stay active with daily movement and strength training.</p>
+        </article>
+        <article class="card">
+          <h3>Mental Health</h3>
+          <p>Practice mindfulness, meditation, and adequate sleep.</p>
+        </article>
+      </div>
+
+      <!-- Table -->
+      <h2>Weekly Fitness Schedule</h2>
+      <table>
+        <caption>Workout Plan</caption>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Exercise</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monday</td>
+            <td>Cardio</td>
+            <td>30 min</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>Strength Training</td>
+            <td>45 min</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>Yoga</td>
+            <td>40 min</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Media -->
+      <h2>Health Media</h2>
+      <figure>
+        <img src="healthy-food.jpg" alt="Bowl of fresh fruits and vegetables">
+        <figcaption>Fresh fruits and vegetables energize your body.</figcaption>
+      </figure>
+
+      <audio controls>
+        <source src="relaxing-music.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+      </audio>
+
+      <video width="320" height="240" controls>
+        <source src="yoga-demo.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+    </section>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="#">Healthy Recipes</a></li>
+        <li><a href="#">Workout Plans</a></li>
+        <li><a href="#">Meditation Guides</a></li>
+        <li><a href="#">Wellness Articles</a></li>
+      </ul>
+
+      <!-- FORM -->
+      <h2>Newsletter Sign-Up</h2>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Personal Info</legend>
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required><br>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="on"><br>
+
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" min="10" max="100" required><br>
+        </fieldset>
+
+        <fieldset>
+          <legend>Preferences</legend>
+          <label for="goal">Main Goal:</label>
+          <select id="goal" name="goal" required>
+            <option value="">-- Select --</option>
+            <option value="fitness">Improve Fitness</option>
+            <option value="nutrition">Eat Healthier</option>
+            <option value="wellbeing">Better Mental Health</option>
+          </select><br>
+
+          <p>Preferred Activities:</p>
+          <label><input type="checkbox" name="activity" value="yoga"> Yoga</label>
+          <label><input type="checkbox" name="activity" value="running"> Running</label>
+          <label><input type="checkbox" name="activity" value="gym"> Gym</label><br>
+
+          <label for="feedback">Tell us about your current lifestyle:</label><br>
+          <textarea id="feedback" name="feedback" rows="4" cols="30" placeholder="Write here..."></textarea>
+        </fieldset>
+
+        <input type="submit" value="Subscribe">
+      </form>
+    </aside>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 Health & Lifestyle by Billi Omenda</p>
+  </footer>
+
+</body>
+</html>
