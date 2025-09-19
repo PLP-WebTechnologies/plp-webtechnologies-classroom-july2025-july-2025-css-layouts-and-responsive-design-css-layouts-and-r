@@ -1,0 +1,220 @@
+/* ================================
+   GLOBAL STYLES
+=============================== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ================================
+   NAVIGATION (FLEXBOX)
+=============================== */
+.nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav li {
+  margin: 0 1rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  color: #4caf50;
+}
+
+/* ================================
+   MAIN CONTENT (GRID)
+=============================== */
+.main-grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* Content + Sidebar */
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* CONTENT SECTION */
+.content {
+  background: #ffffff;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Cards using Flexbox */
+.cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.card {
+  flex: 1 1 30%;
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: #fff;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: #e0f2f1;
+}
+
+caption {
+  caption-side: top;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Media */
+figure {
+  margin: 20px 0;
+  text-align: center;
+}
+
+img, video, audio {
+  margin-top: 10px;
+  border: 2px solid #4caf50;
+  border-radius: 6px;
+  padding: 5px; /* Box Model */
+  max-width: 100%;
+}
+
+/* SIDEBAR */
+.sidebar {
+  background: #ffffff;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+}
+
+.sidebar a:hover {
+  color: #4caf50;
+}
+
+/* FORM */
+form {
+  margin-top: 1rem;
+}
+
+fieldset {
+  margin-bottom: 1rem;
+  border: 2px dashed #81c784;
+  padding: 10px;
+}
+
+legend {
+  font-weight: bold;
+  color: #388e3c;
+}
+
+label {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+  background: #388e3c;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+}
+
+/* ================================
+   MEDIA QUERIES (RESPONSIVE)
+=============================== */
+@media (max-width: 900px) {
+  .main-grid {
+    grid-template-columns: 1fr; /* Stack content + sidebar */
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav li {
+    margin: 0.5rem 0;
+  }
+}
