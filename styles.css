@@ -1,0 +1,124 @@
+/* General Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Header */
+.site-header {
+  background: #004080;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.nav-bar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.nav-bar li {
+  margin: 0 15px;
+}
+
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-bar a:hover {
+  text-decoration: underline;
+}
+
+/* Grid Layout for Main */
+.grid-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Content Area */
+.content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Flexbox Cards */
+.card-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #e6f0ff;
+  padding: 15px;
+  border-radius: 6px;
+  flex: 1 1 200px; /* flex-grow, flex-shrink, flex-basis */
+  min-width: 180px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Sidebar */
+.sidebar {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+/* Footer */
+.site-footer {
+  background: #004080;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* ----------------------
+   Responsive Breakpoints
+-----------------------*/
+
+/* Tablets */
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-bar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-bar li {
+    margin: 10px 0;
+  }
+}
