@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Flexbox, Grid Layout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ===== HEADER & NAVIGATION (Flexbox) ===== -->
+  <header class="site-header">
+    <div class="brand">
+      <h1>FlexGrid Detail</h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN AREA (CSS Grid) ===== -->
+  <main class="grid-layout">
+    <aside class="sidebar">
+      <h2>Sidebar</h2>
+      <p>This area can hold links, ads, or extra content.</p>
+    </aside>
+
+    <section class="content">
+      <h2>Main Content</h2>
+      <p>
+        Resize the browser and you will see this layout adapt.  
+        The sidebar will move below the main content on tablets and phones.
+      </p>
+
+      <!-- Flexbox cards inside Grid content -->
+      <div class="card-container">
+        <article class="card">Card 1</article>
+        <article class="card">Card 2</article>
+        <article class="card">Card 3</article>
+        <article class="card">Card 4</article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <p>&copy; 2025 FlexGrid Connect – All rights reserved</p>
+  </footer>
+</body>
+</html>

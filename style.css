@@ -1,0 +1,126 @@
+/* ==========================================================
+   Base & Reset
+   ========================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fdfdfd;
+}
+
+/* ==========================================================
+   Header & Navigation  (Flexbox)
+   ========================================================== */
+.site-header {
+  background: #4a90e2;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;  /* space between brand and nav */
+  align-items: center;
+  flex-wrap: wrap;                 /* wrap on small screens */
+}
+
+.brand h1 {
+  font-size: 1.8rem;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;                        /* space between nav items */
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  transition: background 0.3s;
+}
+
+.main-nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+/* ==========================================================
+   Main Layout  (CSS Grid)
+   ========================================================== */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr; /* sidebar + content */
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.sidebar {
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.content {
+  background: #fafafa;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+/* ==========================================================
+   Flexbox Cards
+   ========================================================== */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  flex: 1 1 200px;   /* grow/shrink with min width 200px */
+  background: #ddd;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* ==========================================================
+   Footer
+   ========================================================== */
+.site-footer {
+  background: #4a90e2;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+/* ==========================================================
+   Responsive Breakpoints
+   ========================================================== */
+
+/* Tablet: stack sidebar below content */
+@media (max-width: 900px) {
+  .grid-layout {
+    grid-template-columns: 1fr; /* single column */
+  }
+}
+
+/* Mobile: vertical navigation, tighter padding */
+@media (max-width: 600px) {
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .grid-layout {
+    padding: 1rem;
+  }
+}
