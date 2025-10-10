@@ -1,0 +1,1310 @@
+/* ==========================================
+   CSS RESET & BASE STYLES
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #2c2c2c;
+    background-color: #fafafa;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   HEADER & NAVIGATION - FLEXBOX LAYOUT
+   Uses Flexbox for horizontal navigation alignment
+   ========================================== */
+
+.header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    /* FLEXBOX: Align brand and navigation horizontally */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.brand {
+    flex-shrink: 0;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #d4af37;
+    letter-spacing: 1px;
+    margin-bottom: 0.25rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tagline {
+    font-size: 0.85rem;
+    color: #e0e0e0;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+/* FLEXBOX: Navigation items in horizontal row */
+.navigation {
+    flex: 1;
+}
+
+.nav-list {
+    list-style: none;
+    /* FLEXBOX: Horizontal navigation menu */
+    display: flex;
+    gap: 2.5rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #d4af37, #f4d03f);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #d4af37;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+
+.hero {
+    position: relative;
+    height: 90vh;
+    min-height: 600px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #3d3d3d 100%),
+                url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600') center/cover no-repeat;
+    background-blend-mode: overlay;
+    /* FLEXBOX: Center hero content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.7) 0%, rgba(61, 61, 61, 0.5) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(135deg, #ffffff, #d4af37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    color: #f0f0f0;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* FLEXBOX: Hero buttons in horizontal row */
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.scroll-arrow {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    border-left: 2px solid #d4af37;
+    border-bottom: 2px solid #d4af37;
+    transform: rotate(-45deg);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) rotate(-45deg); }
+    50% { transform: translateY(10px) rotate(-45deg); }
+}
+
+/* ==========================================
+   BUTTONS
+   ========================================== */
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #d4af37, #f4d03f);
+    color: #1a1a1a;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #f4d03f, #d4af37);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.6);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* ==========================================
+   ABOUT SECTION - GRID LAYOUT WITH SIDEBAR
+   Uses CSS Grid for main content + sidebar layout
+   ========================================== */
+
+.about-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+}
+
+.about-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    /* GRID: Main content area + Sidebar */
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 3rem;
+}
+
+.about-main {
+    /* Main content area takes up remaining space */
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #d4af37, #f4d03f);
+    border-radius: 2px;
+}
+
+.section-title.light {
+    color: #ffffff;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+    font-weight: 300;
+}
+
+.section-subtitle.light {
+    color: #e0e0e0;
+}
+
+/* FLEXBOX: About content with image */
+.about-content {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.intro-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #1a1a1a;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1.25rem;
+}
+
+.about-image-wrapper {
+    flex: 1;
+}
+
+.about-image {
+    height: 450px;
+    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover {
+    transform: scale(1.02);
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-text {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ==========================================
+   SIDEBAR - FLEXBOX LAYOUT
+   Sidebar cards stacked vertically using Flexbox
+   ========================================== */
+
+.sidebar {
+    /* FLEXBOX: Vertical stacking of sidebar cards */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sidebar-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.sidebar-card.highlight {
+    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+    color: #1a1a1a;
+    text-align: center;
+}
+
+.sidebar-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #d4af37;
+}
+
+.sidebar-card.highlight .sidebar-title {
+    border-bottom-color: #1a1a1a;
+}
+
+/* FLEXBOX: Sidebar items with icon + content */
+.sidebar-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+}
+
+.sidebar-item:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.sidebar-item strong {
+    display: block;
+    color: #1a1a1a;
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.sidebar-item p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.sidebar-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 2rem;
+    background: #1a1a1a;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.sidebar-btn:hover {
+    background: #2d2d2d;
+    transform: translateY(-2px);
+}
+
+.awards-list {
+    list-style: none;
+}
+
+.awards-list li {
+    padding: 0.75rem 0;
+    color: #555;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.awards-list li:last-child {
+    border-bottom: none;
+}
+
+/* ==========================================
+   CUISINES SECTION - GRID LAYOUT
+   Uses CSS Grid for responsive card layout
+   ========================================== */
+
+.cuisines-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+}
+
+.cuisines-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* GRID: Responsive cuisine cards */
+.cuisine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.cuisine-card {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.cuisine-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    height: 250px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-image.italian {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.card-image.japanese {
+    background: linear-gradient(135deg, #e8505b 0%, #d84a5b 100%);
+}
+
+.card-image.french {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+.card-image.chinese {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+}
+
+.card-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #1a1a1a;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.card-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.dish-highlights {
+    list-style: none;
+}
+
+.dish-highlights li {
+    padding: 0.75rem 0;
+    padding-left: 1.5rem;
+    color: #555;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+}
+
+.dish-highlights li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-weight: 700;
+}
+
+.dish-highlights li:last-child {
+    border-bottom: none;
+}
+
+/* ==========================================
+   HERITAGE SECTION - GRID LAYOUT
+   Uses CSS Grid for heritage cards
+   ========================================== */
+
+.heritage-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #ffffff;
+}
+
+.heritage-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* GRID: Heritage cards in responsive grid */
+.heritage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.heritage-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.heritage-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-8px);
+    border-color: #d4af37;
+}
+
+.heritage-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.heritage-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+.heritage-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #e0e0e0;
+    margin-bottom: 1.5rem;
+}
+
+.heritage-price {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f4d03f;
+    padding: 0.5rem 1.5rem;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 50px;
+    border: 2px solid #d4af37;
+}
+
+/* ==========================================
+   MENU SECTION - GRID LAYOUT
+   Uses CSS Grid for menu categories
+   ========================================== */
+
+.menu-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+}
+
+.menu-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* GRID: Menu categories side by side */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.menu-category {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border: 2px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.menu-category:hover {
+    border-color: #d4af37;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.menu-category.featured {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #ffffff;
+    border-color: #d4af37;
+}
+
+.category-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #d4af37;
+}
+
+.menu-category.featured .category-title {
+    color: #d4af37;
+}
+
+.menu-items {
+    /* FLEXBOX: Menu items stacked vertically */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menu-item {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.menu-category.featured .menu-item {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+/* FLEXBOX: Item header with name and price */
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.item-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    flex: 1;
+}
+
+.menu-category.featured .item-name {
+    color: #ffffff;
+}
+
+.item-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #d4af37;
+    flex-shrink: 0;
+}
+
+.item-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.menu-category.featured .item-description {
+    color: #e0e0e0;
+}
+
+/* ==========================================
+   RESERVATIONS SECTION - GRID LAYOUT
+   Uses CSS Grid for form + info layout
+   ========================================== */
+
+.reservations-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    color: #ffffff;
+}
+
+.reservations-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* GRID: Form and info side by side */
+.reservation-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.reservation-form-wrapper {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* GRID: Form rows with 2 columns */
+.booking-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    /* Flexbox for label and input stacking */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 1rem 1.25rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #d4af37;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.reservation-info {
+    /* Flexbox for info cards */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-card {
+    background: rgba(212, 175, 55, 0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #d4af37;
+}
+
+.info-card h3 {
+    font-size: 1.3rem;
+    color: #d4af37;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.info-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #e0e0e0;
+    margin-bottom: 1rem;
+}
+
+.info-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   CONTACT SECTION - GRID LAYOUT
+   Uses CSS Grid for contact info + map
+   ========================================== */
+
+.contact-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+}
+
+.contact-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* GRID: Contact info and map side by side */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.contact-heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+}
+
+/* FLEXBOX: Contact details stacked vertically */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* FLEXBOX: Contact item with icon */
+.contact-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.contact-item strong {
+    display: block;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
+}
+
+.map-wrapper {
+    position: relative;
+}
+
+.map-placeholder {
+    height: 100%;
+    min-height: 400px;
+    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+    border-radius: 15px;
+    /* FLEXBOX: Center map content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.map-icon {
+    font-size: 4rem;
+}
+
+.map-placeholder p {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.map-placeholder span {
+    font-size: 1rem;
+    color: #2d2d2d;
+}
+
+/* ==========================================
+   FOOTER - GRID LAYOUT
+   Uses CSS Grid for footer columns
+   ========================================== */
+
+.footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+    color: #ffffff;
+    padding: 4rem 0 2rem;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* GRID: Footer columns */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-column {
+    /* FLEXBOX: Column content stacking */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+}
+
+.footer-tagline {
+    font-style: italic;
+    color: #e0e0e0;
+    font-size: 0.9rem;
+}
+
+.footer-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #b0b0b0;
+}
+
+.footer-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links {
+    list-style: none;
+    /* FLEXBOX: Links stacked vertically */
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-links a {
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #d4af37;
+    padding-left: 0.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    color: #808080;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   ========================================== */
+
+/* Tablet: 768px - 1024px */
+@media (max-width: 1024px) {
+    /* Header navigation adjustment */
+    .nav-list {
+        gap: 1.5rem;
+    }
+    
+    /* About section - stack sidebar below */
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .sidebar {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        flex-direction: row;
+    }
+    
+    /* Cuisine grid adjustment */
+    .cuisine-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Heritage grid adjustment */
+    .heritage-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Menu categories stack */
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Reservation layout adjustment */
+    .reservation-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Contact layout adjustment */
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile: 768px and below */
+@media (max-width: 768px) {
+    /* Header stacks vertically */
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+    
+    .nav-list {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+    }
+    
+    /* Hero adjustments */
+    .hero {
+        height: 70vh;
+        min-height: 500px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Section titles smaller */
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    /* About content stacks */
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        height: 300px;
+    }
+    
+    /* Sidebar becomes single column */
+    .sidebar {
+        flex-direction: column;
+    }
+    
+    /* Cuisine grid single column */
+    .cuisine-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Heritage grid single column */
+    .heritage-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Form rows stack */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Footer grid adjustment */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Small Mobile: 480px and below */
+@media (max-width: 480px) {
+    /* Header brand text smaller */
+    .logo {
+        font-size: 1.6rem;
+    }
+    
+    .tagline {
+        font-size: 0.75rem;
+    }
+    
+    /* Navigation full width */
+    .nav-list {
+        justify-content: flex-start;
+    }
+    
+    /* Hero further reduced */
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Section spacing reduced */
+    .about-section,
+    .cuisines-section,
+    .heritage-section,
+    .menu-section,
+    .reservations-section,
+    .contact-section {
+        padding: 4rem 0;
+    }
+    
+    /* Section titles smaller */
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Card padding reduced */
+    .cuisine-card,
+    .heritage-card,
+    .menu-category {
+        padding: 1.5rem;
+    }
+    
+    /* Menu grid minimum size reduced */
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Form padding reduced */
+    .reservation-form-wrapper {
+        padding: 2rem 1.5rem;
+    }
+    
+    /* Map height reduced */
+    .map-placeholder {
+        min-height: 300px;
+    }
+}
+
+/* ==========================================
+   UTILITY CLASSES & ANIMATIONS
+   ========================================== */
+
+/* Smooth transitions for all interactive elements */
+a, button, .btn {
+    transition: all 0.3s ease;
+}
+
+/* Prevent horizontal scroll */
+body {
+    overflow-x: hidden;
+}
+
+/* Focus states for accessibility */
+a:focus,
+button:focus,
+input:focus,
+select:focus {
+    outline: 2px solid #d4af37;
+    outline-offset: 2px;
+}
