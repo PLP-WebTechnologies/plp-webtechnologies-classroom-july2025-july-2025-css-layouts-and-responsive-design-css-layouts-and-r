@@ -1,0 +1,215 @@
+/* ===================================
+   GLOBAL RESET & BASE STYLES
+   =================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #333;
+    background-color: #f7f9fb;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ===================================
+   HEADER (Flexbox)
+   =================================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0077b6;
+    color: white;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: white;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #caf0f8;
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+.hero {
+    text-align: center;
+    background: linear-gradient(to right, #0096c7, #00b4d8);
+    color: white;
+    padding: 4rem 1rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-btn {
+    background-color: white;
+    color: #0077b6;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background-color: #caf0f8;
+}
+
+/* ===================================
+   MAIN LAYOUT (CSS GRID)
+   =================================== */
+.main-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* ===================================
+   CONTENT AREA (Flexbox for Cards)
+   =================================== */
+.content h2 {
+    margin-bottom: 1rem;
+    color: #0077b6;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: white;
+    flex: 1 1 calc(33.333% - 1.5rem);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===================================
+   SIDEBAR
+   =================================== */
+.sidebar {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.sidebar h3 {
+    margin-bottom: 1rem;
+    color: #0077b6;
+}
+
+.sidebar ul li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+    color: #0077b6;
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+.footer {
+    text-align: center;
+    background-color: #0077b6;
+    color: white;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN (Media Queries)
+   =================================== */
+
+/* Tablet (≤ 992px) */
+@media (max-width: 992px) {
+    .main-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 1rem);
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile (≤ 600px) */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 0.5rem;
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        flex: 1 1 100%;
+    }
+
+    .hero {
+        padding: 2.5rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+}
