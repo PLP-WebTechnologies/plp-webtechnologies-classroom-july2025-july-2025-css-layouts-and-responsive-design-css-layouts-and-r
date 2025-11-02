@@ -1,0 +1,136 @@
+/* ====== GLOBAL STYLES ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fafafa;
+}
+
+/* ====== HEADER ====== */
+.header {
+  background: #004466;
+  color: #fff;
+  padding: 1rem;
+}
+
+.header h1 {
+  text-align: center;
+}
+
+.navbar ul {
+  display: flex; /* FLEXBOX USED HERE */
+  justify-content: center;
+  list-style: none;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* ====== MAIN LAYOUT USING GRID ====== */
+.main-container {
+  display: grid; /* GRID USED HERE */
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* ====== CONTENT SECTION ====== */
+.content h2 {
+  margin-bottom: 1rem;
+  color: #004466;
+}
+
+/* FLEXBOX INSIDE GRID ITEM */
+.card-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1rem;
+  flex: 1 1 250px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ====== SIDEBAR ====== */
+.sidebar {
+  background: #e8f4f8;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #004466;
+}
+
+/* ====== FOOTER ====== */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #004466;
+  color: white;
+  margin-top: 2rem;
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+
+/* Tablets (max-width: 900px) */
+@media (max-width: 900px) {
+  .main-container {
+    grid-template-columns: 2fr 1fr;
+    padding: 1rem;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+}
