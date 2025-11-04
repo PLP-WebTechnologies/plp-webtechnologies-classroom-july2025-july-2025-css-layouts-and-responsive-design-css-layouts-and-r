@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Responsive layout using CSS Grid and Flexbox." />
+  <title>Responsive CSS Layout</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Responsive Web Design with CSS Grid & Flexbox</h1>
+  </header>
+
+  <nav>
+    <ul class="nav-list">
+      <li><a href="#grid">Grid Layout</a></li>
+      <li><a href="#flex">Flexbox Cards</a></li>
+      <li><a href="#footer">Footer</a></li>
+    </ul>
+  </nav>
+
+  <div class="grid-container">
+    <aside class="sidebar">
+      <h2>Sidebar</h2>
+      <p>This sidebar uses Grid layout and shifts position on smaller screens.</p>
+    </aside>
+
+    <main class="content">
+      <section id="grid">
+        <h2>Main Content Area</h2>
+        <p>This section is part of a two-column Grid layout. Resize the screen to see it adapt.</p>
+      </section>
+
+      <section id="flex">
+        <h2>Flexbox Card Section</h2>
+        <div class="card-container">
+          <div class="card">
+            <h3>Card 1</h3>
+            <p>Flexbox aligns these cards in a row or column depending on screen size.</p>
+          </div>
+          <div class="card">
+            <h3>Card 2</h3>
+            <p>Each card has padding, margin, and a border for clarity.</p>
+          </div>
+          <div class="card">
+            <h3>Card 3</h3>
+            <p>Responsive units ensure consistent spacing across devices.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer id="footer">
+    <p>&copy; 2025 Responsive Layout Demo</p>
+  </footer>
+
+</body>
+</html>
